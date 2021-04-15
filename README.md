@@ -36,7 +36,7 @@ equivalent lua code:
 		b = c
 	end
 
-some more examples can be found in the `lipu` folder.
+some more examples can be found in the [`lipu`](lipu) folder.
 
 ## how does this work?
 source code is parsed and compiled into lua code. the lua interpreter does the hard work of actually running it.
