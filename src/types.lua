@@ -53,7 +53,7 @@ end
 function cast_fromstring(v,t)
 
 	if t == "number" then
-		if v.val == "ali" then
+		if v.val == "ali" or v.val == "ale" then
 			v.val = 100
 			return v
 		elseif v.val == "ala" then
@@ -73,8 +73,8 @@ function cast_fromstring(v,t)
 				elseif w == "ala" then
 					v.val = 0
 					return v
-				elseif w == "ali" then
-					v.val = 0
+				elseif w == "ali" or w == "ale" then
+					v.val = 100
 					return v
 				end
 			end

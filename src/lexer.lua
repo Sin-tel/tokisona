@@ -1,10 +1,16 @@
--- dumb lexer
+-- lexer
+-- converts file into a list of tokens, in this case words, punctuation, etc.
+
 local token = ""
 local list = {}
 local word = false
 
 local function add(t)
 	if t ~= "" then
+		-- hack to make ale and ali synonymous
+		if t == "ale" then
+			t = "ali"
+		end
 		table.insert(list,t)
 		token = ""
 		prev = t

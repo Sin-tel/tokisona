@@ -1,3 +1,7 @@
+-- parser
+-- generates an abstract syntax tree from the list of tokens
+
+
 local index = 1
 local tokens = {}
 local tree = {}

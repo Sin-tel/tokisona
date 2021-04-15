@@ -1,4 +1,4 @@
-mi pilin e ni: check if Suno is divisible by Poki
+mi pilin e ni: check if Suno is divisible by Poki.
 
 nanpa Suno li mute mute tu.
 nanpa Poki li luka tu.

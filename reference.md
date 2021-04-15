@@ -1,16 +1,16 @@
 # tokisona reference
-programming language for Toki Pona 
+tokisona is a programming language for toki pona.
 
 ## intro
-programs are written in (mostly) correct toki pona sentences.
- * lowercase words should be from the word list
- * capitalised words can be any name that is phonologically correct
- * the only place where you are allowed to break these rules is in comments
-sentences end with `.` or `!`. (stylistically, prefer to use `!` after imperatives or interjections.)
-questions (ie that return some output) end with `?`.
-some special sentences end with `:`
-commas are ignored
-whitespace (tabs etc) is ignored.
+_this guide is in english for now, ideally this would also be in toki pona_
+
+programs are written in (mostly) correct toki pona sentences. `.tps` is used as the file extension for tokisona programs.
+* lowercase words should be from the word list.
+* capitalised words can be any name that is phonologically correct.
+* the only place where you are allowed to break these rules is in comments and strings literals.
+* sentences end with `.` or `!`. (stylistically, prefer to use `!` after imperatives or interjections.)
+* questions (ie that return some output) end with `?`. some special sentences end with `:`
+* commas are ignored. add them if you like. whitespace (tabs etc) is ignored.
 `ale` and `ali` are synonymous.
 newlines: only allowed (but not required) after a sentence.
 
@@ -18,7 +18,14 @@ newlines: only allowed (but not required) after a sentence.
 named variables start with capital letter, and a word preceding it to indicate the type.
 all variables are global. they dont need to be declared before using them.
 
-number type: `nanpa`
+variable names are one word and must start with a capital letter and can have additional capital letters in them.
+their names must follow toki pona phonotactics: 
+	* syllables have a (C)V(N) structure. the consonant is required in all syllables except the first.
+	* letters b, c, d, f, g, h, q, r, v, y and z aren't allowed
+	* ji, wu, wo, ti are not allowed
+	* two nasals (m, n) cannot follow eachother
+
+### number type: `nanpa`
 	the numbers are:
 
 	0    | ala
@@ -32,21 +39,18 @@ number type: `nanpa`
 
 by putting them next to eachother you add them.
 
-e.g.:
-
 	78: mute mute mute luka luka luka tu wan
 
 numbers higher than 100 are not allowed. (ali really means infinite)
 negative numbers will just produce zero.
 
-boolean type: `sona` ("fact")
-
+### boolean type: `sona` ("fact")
 	true  | lon
 	false | lon ala
 
-string type: `nimi` ("words")
-	can hold any valid tp word or combination of words seperated by spaces
-	a single word is a valid string. multiple words should be wrapped in "".
+### string type: `nimi` ("words")
+can hold any valid tp word or combination of words seperated by spaces
+a single word is a valid string. multiple words should be wrapped in "".
 
 
 ## assignment
@@ -64,15 +68,13 @@ string type: `nimi` ("words")
 	 | x li ni: [sentence]
 
 ## typecasting
-changing the type of a variable automatically typecasts it.
+changing how you call a variable automatically typecasts it.
 
 * number to string: produces a string like `"mute mute luka wan"`.
 * string to number: badly tries to infer the number of objects in the sentence. see 'nanpa akesi.tps'.
-
 * number to boolean: `ala` = `lon ala`, every other number = `lon`
 * boolean to number: `lon ala` = `ala`, `lon` = `wan`
-
-* boolean to string: obvious
+* boolean to string: `"lon"`, `"lon ala"`
 * string to boolean: strings containing an even amount of "ala" will produce "lon"
 	* strings containing an odd amount will produce "lon ala".
 	* "toki" => `lon`
@@ -209,7 +211,7 @@ currently errors arent well reported.
 ideally they should be in proper TP.
 
 ## examples 
-toki.tp:
+toki.tp
 
 	ma o toki.tp
 		"ma o, toki!" li seme?
@@ -237,6 +239,7 @@ nanpa pi jan Piponasi.tp
 ### lists / dictionaries
 not implemented.
 
+maybe: 
 lipu/poki
 
 ijo pi [index] lon lipu [Name]

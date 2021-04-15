@@ -8,7 +8,7 @@ nanpa A li ala.
 nanpa Pe li wan.
 nanpa Se li ala.
 
-tenpo ali la o pali e ni:
+tenpo mute la o pali e ni:
 	nanpa A li seme?
 	nanpa Se li ni: nanpa A li suli e nanpa Pe.
 	nanpa A li nanpa Pe.
