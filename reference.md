@@ -1,7 +1,7 @@
-TOKI SONA
+# tokisona reference
 programming language for Toki Pona 
 
-
+## intro
 programs are written in (mostly) correct toki pona sentences.
  * lowercase words should be from the word list
  * capitalised words can be any name that is phonologically correct
@@ -14,64 +14,60 @@ whitespace (tabs etc) is ignored.
 `ale` and `ali` are synonymous.
 newlines: only allowed (but not required) after a sentence.
 
-* variables:
-	named variables start with capital letter, and a word preceding it to indicate the type.
+## variables
+named variables start with capital letter, and a word preceding it to indicate the type.
 
-	all variables are global. they dont need to be declared before using them.
+all variables are global. they dont need to be declared before using them.
 
-	number type: `nanpa`
-		the numbers are:
-		0    | ala
-		1    | wan 
-		2    | tu 
-		3    | wan tu
-		4    | tu tu
-		5    | luka
-		20   | mute
-		100+ | ali
+number type: `nanpa`
+	the numbers are:
+	0    | ala
+	1    | wan 
+	2    | tu 
+	3    | wan tu
+	4    | tu tu
+	5    | luka
+	20   | mute
+	100+ | ali
 
-		by putting them next to eachother you add them
-		e.g.:
-		78   | mute mute mute luka luka luka tu wan
+by putting them next to eachother you add them
+e.g.:
+78   | mute mute mute luka luka luka tu wan
 
-		numbers higher than 100 are not allowed. (ali really means infinite)
-		negative numbers will just produce zero.
+numbers higher than 100 are not allowed. (ali really means infinite)
+negative numbers will just produce zero.
 
-	boolean type: `sona` ("fact")
-		true  | lon
-		false | lon ala
+boolean type: `sona` ("fact")
+	true  | lon
+	false | lon ala
 
-	string type: `nimi` ("words")
-		can hold any valid tp word or combination of words seperated by spaces
-		a single word is a valid string. multiple words should be wrapped in "".
+string type: `nimi` ("words")
+	can hold any valid tp word or combination of words seperated by spaces
+	a single word is a valid string. multiple words should be wrapped in "".
 
-* large numbers (optional)
-	enable large number mode:
-	| mi wile e nanpa suli.
 
-* assignment
-
-	Po = 1
+## assignment
+Po = 1
 	| nanpa Po li wan.
 
-	Ta = "hello"
+Ta = "hello"
 	| nimi Ta li toki.
 
-	So = true
+So = true
 	| sona So li lon.
 
-	x = evaluate(sentence)
+x = evaluate(sentence)
 	| x li ni: [sentence]
 
-	to denote strings longer than a single word, we need quotation marks.
+to denote strings longer than a single word, we need quotation marks.
 	| nimi Pe li "[sentence]".
-	or
+or
 	| nimi Pe li ni: "[sentence]"
 
-* typecasting
+## typecasting
 	changing the type of a variable automatically typecasts it.
-	number to string: obvious, its just the word
-	string to number: works if it is a number, otherwise it will produce `ala`
+	number to string: produces a string like `"mute mute luka wan"`.
+	string to number: badly tries to infer the number of objects in the sentence. see 'nanpa akesi.tps'.
 
 	number to boolean: `ala` = `lon ala`, every other number = `lon`
 	boolean to number: `lon ala` = `ala`, `lon` = `wan`
@@ -84,7 +80,7 @@ newlines: only allowed (but not required) after a sentence.
 		"lon ala ala" => `lon`
 
 	
-* questions
+## questions
 
 	print(x) | nanpa x li seme?
 			 | nimi x li seme?
@@ -94,14 +90,19 @@ newlines: only allowed (but not required) after a sentence.
 	| nanpa Po li seme?
 	> wan
 
-* strings
-	a single word is just that. 
-	formultiple words, wrap them in ""
+## strings
+	a single word will be interpreted as a string (even keywords).
+	for multiple words, wrap them in ""
+	A = "toki" 
 	| nimi A li toki.
-	| nimi Pe li toki.
+	these are equivalent:
+	| nimi Pe li "toki pona li pona.".
+	| nimi Pe li ni: "toki pona li pona."
 
 
-* addition/subtraction
+
+
+## arithmetic
 	add
 	| nanpa x li suli e nanpa y.
 	subtract
@@ -118,15 +119,15 @@ newlines: only allowed (but not required) after a sentence.
 	| nimi Toki li suli e nimi Pona. 
 	evaluates to "toki pona"
 
+	there's no multiplication, division, etc.
 
-
-* logic
-	so far, there is no and / or
-	
+## logic
 	not x
 	| x ala
 
-* relational operators
+	so far, there is no equivalent for 'and', 'or'
+
+## relational operators
 	only for nanpa:
 		larger than
 		| nanpa A la nanpa Pe li suli.
@@ -145,17 +146,9 @@ newlines: only allowed (but not required) after a sentence.
 		| nimi A li sama ala e nimi Pe.
 	these all evaultuate to a boolean (sona)
 
-	nb: 
-	| ali li sama e ale.
-	lon.
+## control flow
+	a control block starts eith `e ni:` and is closed with `o pini!`
 
-
-* flow
-	
-	for a single statement:
-	| [control] e ni: [sentence.]
-
-	multiple sentences:
 	| [control] e ni:
 	| 	[sentence.]
 	| 	[sentence.]

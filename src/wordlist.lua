@@ -1,3 +1,5 @@
+-- pu
+
 local words = {
 	"a",
 	"akesi",
