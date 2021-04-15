@@ -20,10 +20,10 @@ all variables are global. they dont need to be declared before using them.
 
 variable names are one word and must start with a capital letter and can have additional capital letters in them.
 their names must follow toki pona phonotactics: 
-	* syllables have a (C)V(N) structure. the consonant is required in all syllables except the first.
-	* letters b, c, d, f, g, h, q, r, v, y and z aren't allowed
-	* ji, wu, wo, ti are not allowed
-	* two nasals (m, n) cannot follow eachother
+* syllables have a (C)V(N) structure. the consonant is required in all syllables except the first.
+* letters b, c, d, f, g, h, q, r, v, y and z aren't allowed
+* ji, wu, wo, ti are not allowed
+* two nasals (m, n) cannot follow eachother
 
 ### number type: `nanpa`
 	the numbers are:
