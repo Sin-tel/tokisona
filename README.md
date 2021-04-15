@@ -65,3 +65,4 @@ it provides:
 * `.tps` extension association
 * build file (you may need to set the paths correctly)
 
+![syntax highlighting](syntax_highlight.png)
