@@ -50,45 +50,41 @@ string type: `nimi` ("words")
 
 
 ## assignment
-Po = 1
-	`nanpa Po li wan.`
 
-Ta = "hello"
-	`nimi Ta li toki.`
+	Po = 1
+	 | nanpa Po li wan.
 
-So = true
-	`sona So li lon.`
+	Ta = "hello"
+	 | nimi Ta li toki.
 
-x = evaluate(sentence)
-	`x li ni: [sentence]`
+	So = true
+	 | sona So li lon.
 
-to denote strings longer than a single word, we need quotation marks.
-	`nimi Pe li "[sentence]".`
-or
-	`nimi Pe li ni: "[sentence]"`
+	x = evaluate(sentence)
+	 | x li ni: [sentence]
 
 ## typecasting
 changing the type of a variable automatically typecasts it.
-number to string: produces a string like `"mute mute luka wan"`.
-string to number: badly tries to infer the number of objects in the sentence. see 'nanpa akesi.tps'.
 
-number to boolean: `ala` = `lon ala`, every other number = `lon`
-boolean to number: `lon ala` = `ala`, `lon` = `wan`
+* number to string: produces a string like `"mute mute luka wan"`.
+* string to number: badly tries to infer the number of objects in the sentence. see 'nanpa akesi.tps'.
 
-boolean to string: obvious
-string to boolean: strings containing an even amount of "ala" will produce "lon"
-	strings containing an odd amount will produce "lon ala".
-	"toki" => `lon`
-	"akesi ala" => `lon ala`
-	"lon ala ala" => `lon`
+* number to boolean: `ala` = `lon ala`, every other number = `lon`
+* boolean to number: `lon ala` = `ala`, `lon` = `wan`
+
+* boolean to string: obvious
+* string to boolean: strings containing an even amount of "ala" will produce "lon"
+	* strings containing an odd amount will produce "lon ala".
+	* "toki" => `lon`
+	* "akesi ala" => `lon ala`
+	* "lon ala ala" => `lon`
 
 	
 ## questions
-print(x) 
-
-	nanpa x li seme?
-	nimi x li seme?
-	sona x li lon ala lon?
+	print(x)
+	 | nanpa x li seme?
+	 | nimi x li seme?
+	 | sona x li lon ala lon?
 
 e.g.:
 
@@ -99,19 +95,18 @@ e.g.:
 a single word will be interpreted as a string (even keywords).
 for multiple words, wrap them in ""
 
-A = "toki":
-
-	nimi A li toki.
+	A = "toki":
+	 | nimi A li toki.
 these are equivalent:
 
-`nimi Pe li "toki pona li pona.".`
-`nimi Pe li ni: "toki pona li pona."`
+	nimi Pe li "toki pona li pona.".
+	nimi Pe li ni: "toki pona li pona."
 
 ## arithmetic
-add
-| `nanpa x li suli e nanpa y.`
-subtract
-| `nanpa x li lili e nanpa y.`
+ * add
+	| `nanpa x li suli e nanpa y.`
+ * subtract
+	| `nanpa x li lili e nanpa y.`
 
 e.g.:
 
