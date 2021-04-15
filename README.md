@@ -41,11 +41,11 @@ some more examples can be found in the `lipu` folder.
 ## how does this work?
 source code is parsed and compiled into lua code. the lua interpreter does the hard work of actually running it.
 
- * `src/lexer.lua`: convert file to list of tokens (words, punctuation)
- * `src/parser.lua`: generate abstract syntax tree (AST) from list of tokens
- * `src/transpiler.lua`: traverse the AST and generate lua code
+ * [src/lexer.lua](src/lexer.lua): convert file to list of tokens (words, punctuation)
+ * [src/parser.lua](src/parser.lua): generate abstract syntax tree (AST) from list of tokens
+ * [src/transpiler.lua](src/transpiler.lua): traverse the AST and generate lua code
 
-see `src/out_fibonacci.lua` for an example of the generated code.
+see [src/out_fibonacci.lua](src/out_fibonacci.lua) for an example of the generated code.
 
 ## how do i use it?
 make sure you have lua installed. to execute a file, run:
