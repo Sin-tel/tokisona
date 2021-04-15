@@ -1,7 +1,7 @@
+-- converts the abstract syntax tree into lua code.
+
 local header = [[
 require("types")
-]]
---[[math.randomseed(os.time())
 ]]
 
 local variables = {}
