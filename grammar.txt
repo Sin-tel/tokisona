@@ -34,7 +34,7 @@ str ::= Word | StringLit | stringvar
 number ::= numberLiteral | numbervar
 numberLiteral ::= "ala" | "ali" | ("mute" | "luka" | "tu" | "wan")+
 
-sentence ::= StringLit (".")? | binop Period | relop Period
+sentence ::= StringLit (Period)? | binop Period | relop Period
 
 question ::= number "li seme?" | str "li seme?" | bool "li lon ala lon?"
 
