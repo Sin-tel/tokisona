@@ -65,37 +65,41 @@ or
 	| nimi Pe li ni: "[sentence]"
 
 ## typecasting
-	changing the type of a variable automatically typecasts it.
-	number to string: produces a string like `"mute mute luka wan"`.
-	string to number: badly tries to infer the number of objects in the sentence. see 'nanpa akesi.tps'.
+changing the type of a variable automatically typecasts it.
+number to string: produces a string like `"mute mute luka wan"`.
+string to number: badly tries to infer the number of objects in the sentence. see 'nanpa akesi.tps'.
 
-	number to boolean: `ala` = `lon ala`, every other number = `lon`
-	boolean to number: `lon ala` = `ala`, `lon` = `wan`
+number to boolean: `ala` = `lon ala`, every other number = `lon`
+boolean to number: `lon ala` = `ala`, `lon` = `wan`
 
-	boolean to string: obvious
-	string to boolean: strings containing an even amount of "ala" will produce "lon"
-		strings containing an odd amount will produce "lon ala".
-		"toki" => `lon`
-		"akesi ala" => `lon ala`
-		"lon ala ala" => `lon`
+boolean to string: obvious
+string to boolean: strings containing an even amount of "ala" will produce "lon"
+	strings containing an odd amount will produce "lon ala".
+	"toki" => `lon`
+	"akesi ala" => `lon ala`
+	"lon ala ala" => `lon`
 
 	
 ## questions
+print(x) 
 
-	print(x) | nanpa x li seme?
-			 | nimi x li seme?
-			 | sona x li lon ala lon?
+	| nanpa x li seme?
+	| nimi x li seme?
+	| sona x li lon ala lon?
 
-	e.g.:
+e.g.:
+
 	| nanpa Po li seme?
 	> wan
 
 ## strings
-	a single word will be interpreted as a string (even keywords).
-	for multiple words, wrap them in ""
-	A = "toki" 
+a single word will be interpreted as a string (even keywords).
+for multiple words, wrap them in ""
+`A = "toki" `
+
 	| nimi A li toki.
-	these are equivalent:
+these are equivalent:
+
 	| nimi Pe li "toki pona li pona.".
 	| nimi Pe li ni: "toki pona li pona."
 
@@ -156,7 +160,7 @@ or
 
 	break | o weka!
 
-* if
+## if/else
 	
 	if x then | x la o pali e ni:
 
@@ -171,7 +175,7 @@ or
 	|   ante li seme?
 	| o pini!
 
-* loops
+## loops
 	
 	while true do:  | tenpo ali la o pali e ni: 
 	repeat x times: | tenpo x la o pali e ni:
@@ -181,7 +185,7 @@ or
 	it stops when the computer gets tired, which is after around 100 iterations or so.
 	however, you can easily get longer loops by nesting them.
 
-* comments
+## comments
 	you can add a comment like this:
 	| mi pilin e ni: [comment]
 
@@ -191,38 +195,43 @@ or
 	|    [comment2]
 	| o pini!
 
+## errors 
+currently errors arent well reported.
+ideally they should be in proper TP.
 
-* errors (dont work yet)
-	if a sentence is deemed grammatical, but the parser doesn't get it:
-	> mi sona ala e ni: [sentence that it failed on]
-	if theres a mistake in the grammar or phonology:
-	> ni li ike: [sentence]
-
-
-* lists / dictionaries?
-	lipu/poki
-
-	ijo pi [index] lon lipu [Name]
-	Se[1] = 2 | ijo pi nanpa wan lon lipu Se li tu.
-
-* functions?
-	probably not lol
-
-* examples 
-	hello world:
-
+## examples 
+> toki.tp:
 	ma o toki.tp
 		"ma o, toki!" li seme?
 
-	calculate fibonacci numbers:
+calculate fibonacci numbers:
 
-	nanpa pi jan Piponasi.tp
-		nanpa A li ala.
-		nanpa Pe li wan.
-		nanpa Se li ala.
-		tenpo ali la o pali e ni:
-			nanpa A li seme?
-			nanpa Se li ni: nanpa A li suli e nanpa Pe.
-			nanpa A li nanpa Pe.
-			nanpe Pe li nanpa Se.
-		pini!
+> nanpa pi jan Piponasi.tp
+	mi pilin e ni:    
+		this program calculates the fibonacci numbers
+	o pini!
+
+	"nanpa pi jan Piponasi:" li seme?
+
+	nanpa A li ala.
+	nanpa Pe li wan.
+	nanpa Se li ala.
+
+	tenpo ali la o pali e ni:
+		nanpa A li seme?
+		nanpa Se li ni: nanpa A li suli e nanpa Pe.
+		nanpa A li nanpa Pe.
+		nanpa Pe li nanpa Se.
+	o pini!
+
+## ideas
+### lists / dictionaries
+not implemented.
+
+lipu/poki
+
+ijo pi [index] lon lipu [Name]
+Se[1] = 2 | ijo pi nanpa wan lon lipu Se li tu.
+
+### functions/subroutines?
+not implemented.
