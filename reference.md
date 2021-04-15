@@ -72,10 +72,15 @@ changing how you call a variable automatically typecasts it.
 
 * number to string: produces a string like `"mute mute luka wan"`.
 * string to number: badly tries to infer the number of objects in the sentence. see [`akesi nanpa.tps`](lipu/akesi%20nanpa.tps).
-* number to boolean: `ala` = `lon ala`, every other number = `lon`
-* boolean to number: `lon ala` = `ala`, `lon` = `wan`
+* number to boolean: 
+	* `ala` => `lon ala`
+	* every other number => `lon`
+* boolean to number: 
+	* `lon ala` => `ala`
+	*  `lon` => `wan`
 * boolean to string: `"lon"`, `"lon ala"`
-* string to boolean: strings containing an even amount of "ala" will produce "lon"
+* string to boolean: 
+	* strings containing an even amount of "ala" will produce "lon". 
 	* strings containing an odd amount will produce "lon ala".
 	* "toki" => `lon`
 	* "akesi ala" => `lon ala`
