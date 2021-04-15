@@ -1,4 +1,4 @@
--- parser
+-- recursive descent parser with backtracking
 -- generates an abstract syntax tree from the list of tokens
 
 
