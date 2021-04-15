@@ -56,7 +56,7 @@ if want to debug programs or see the syntax tree, [`src/main.lua`](src/main.lua)
 
 ## sublime text 3 support
 you can download this repo and open it as a sublime project.
-theres a bunch of files in the `sublime` folder, copy these to your `Packages/User` folder. (which is usually somewhere like `%appdata%\Sublime Text 3\Packages\User`)
+theres a bunch of files in the [`sublime`](sublime) folder, copy these to your `Packages/User` folder. (which is usually somewhere like `%appdata%\Sublime Text 3\Packages\User`)
 
 it provides:
 * syntax highlighting
