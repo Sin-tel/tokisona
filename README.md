@@ -61,7 +61,7 @@ theres a bunch of files in the `sublime` folder, copy these to your `Packages/Us
 it provides:
 * syntax highlighting
 * autocomplete
-* ctrl+/ shirtcut for commenting lines
-* .tps extension association
+* `ctrl+/` shortcut for commenting lines
+* `.tps` extension association
 * build file (you may need to set the paths correctly)
 
