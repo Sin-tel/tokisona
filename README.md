@@ -3,7 +3,7 @@ _tokisona li toki pi ilo sona._
 
 tokisona is a programming language for/in toki pona. programs are written in (mostly) correct toki pona sentences. `.tps` is used as the file extension for tokisona programs. (subject to change, since github thinks this is PLSQL)
 
-see `reference.md` for a guide on how to use it. 
+see `reference.md` for a guide on how to use it. `grammar.txt` contains a description of the grammar.
 
 ## example
 this program produces the fibonacci numbers.
@@ -48,7 +48,9 @@ source code is parsed and compiled into lua code. the lua interpreter does the h
 see `src/out_fibonacci.lua` for an example of the generated code.
 
 ## how do i use it?
-make sure you have lua installed. run `lua.exe tokisona.lua toki.tps` in command line to execute a program.
+make sure you have lua installed. to execute a file, run:
+
+	lua.exe tokisona.lua toki.tps
 
 if want to debug programs or see the syntax tree, `src/main.lua` has more info.
 

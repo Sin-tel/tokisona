@@ -127,29 +127,28 @@ prints "toki pona"
 there's no multiplication, division, etc.
 
 ## logic
-not x
-	| x ala
 
-	so far, there is no equivalent for 'and', 'or'
+	not x | x ala
+
+so far, there is no equivalent for 'and', 'or'.
 
 ## relational operators
 only for nanpa:
-larger than
-`nanpa A la nanpa Pe li suli.`
-less than
-`nanpa A la nanpa Pe li lili.`
+
+	A > B | nanpa Pe la nanpa A li suli.
+	A < B | nanpa Pe la nanpa A li lili.
 	
-! note that these are reversed
-`nanpa A la nanpa Pe li suli.`
-"considering number A, number B is larger"
-=> B > A
+! note that these are reversed:
+
+	nanpa Pe la, nanpa A li suli.
+	"considering number B, number A is larger"
+	=> A > B
 
 for all types:
-equal 
-`nimi A li sama e nimi Pe.`
-not equal
-`nimi A li sama ala e nimi Pe.`
-these all evaultuate to a boolean (sona)
+
+	A == B | nimi A li sama e nimi Pe.
+	A != B | nimi A li sama ala e nimi Pe.
+these all evalutuate to a `sona` (boolean) value.
 
 ## control flow
 a control block starts eith `e ni:` and is closed with `o pini!`
@@ -163,20 +162,21 @@ break a loop with `o weka!`. doing this in the middle of a program just quits th
 
 ## if/else
 	
-if x then: `x la o pali e ni:`
+	[boolean] la o pali e ni:
+		[sentence.]
+		[sentence.]
+	o pini!
 
-if statements close with `pini.`
 
-else: `ante la:`
+	else | ante la, o pali e ni:
 
 
 example:
 
-	mute la o pali e ni:
+	nimi A li sama e nimi Pe la o pali e ni:
 		nanpa A li seme?
-		nanpa A li ni: nanpa A li suli e wan.
 	ante la, o pali e ni:
-	  ante li seme?
+		ante li seme?
 	o pini!
 
 ## loops
@@ -189,9 +189,15 @@ repeat x times:
 
 	tenpo x la o pali e ni:
 
+example:
+
+	tenpo mute la o pali e ni:
+		nanpa A li seme?
+		nanpa A li ni: nanpa A li suli e wan.
+	o pini!
+
 n.b.:  
-the 'tenpo ali' loop will not loop forever.
-it stops when the computer gets tired, which is after around 100 iterations or so.
+the 'tenpo ali' loop will not loop forever, since the highest number we can express is 100.
 however, you can easily get longer loops by nesting them.
 
 ## comments
@@ -205,10 +211,6 @@ multiple lines:
 		[comment1]
 		[comment2]
 	o pini!
-
-## errors 
-currently errors arent well reported.
-ideally they should be in proper TP.
 
 ## examples 
 toki.tp
@@ -235,12 +237,16 @@ nanpa pi jan Piponasi.tp
 		nanpa Pe li nanpa Se.
 	o pini!
 
+## errors 
+currently errors arent well reported.
+ideally they should be in proper TP, and caught before executing the lua code.
+
 ## ideas
-### lists / dictionaries
+### lists / dicts
 not implemented.
 
 maybe: 
-lipu/poki
+lipu or poki
 
 ijo pi [index] lon lipu [Name]
 Se[1] = 2 | ijo pi nanpa wan lon lipu Se li tu.
