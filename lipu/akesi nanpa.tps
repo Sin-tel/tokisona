@@ -5,7 +5,7 @@ nimi Pe li "akesi suwi".
 nimi Se li "akesi tu".
 nimi Te li "akesi mute".
 
-nanpa A li seme?
-nanpa Pe li seme?
-nanpa Se li seme?
-nanpa Te li seme?
+nanpa A li seme?   mi pilin e ni: ala
+nanpa Pe li seme?  mi pilin e ni: wan
+nanpa Se li seme?  mi pilin e ni: tu
+nanpa Te li seme?  mi pilin e ni: mute
