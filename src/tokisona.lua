@@ -1,7 +1,7 @@
 --[[
 	command line version
 	run:
-	> lua.exe tokisona.lua toki.tps
+	> lua tokisona.lua toki.tps
 ]]
 
 local file = arg[1]

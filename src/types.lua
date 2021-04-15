@@ -1,3 +1,5 @@
+-- the lua types and operators 
+
 nanpa = "number"
 sona = "boolean"
 nimi = "string"

@@ -48,9 +48,9 @@ source code is parsed and compiled into lua code. the lua interpreter does the h
 see [`src/out_fibonacci.lua`](src/out_fibonacci.lua) for an example of the generated code.
 
 ## how do i use it?
-make sure you have lua installed. [`src/tokisona.lua`](src/tokisona.lua) does all the necessary steps to compile and run code. to execute a file, run:
+make sure you have lua installed. [`src/tokisona.lua`](src/tokisona.lua) does all the necessary steps to compile and run code. to execute the file 'toki.tps', run:
 
-	lua.exe tokisona.lua toki.tps
+	lua tokisona.lua toki.tps
 
 if want to debug programs or see the syntax tree, [`src/main.lua`](src/main.lua) has more info.
 
