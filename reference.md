@@ -167,8 +167,16 @@ break a loop with `o weka!`. doing this in the middle of a program just quits th
 		[sentence.]
 	o pini!
 
+if/else: 
 
-	else | ante la, o pali e ni:
+	[boolean] la o pali e ni:
+		[sentence.]
+		[sentence.]
+	ante la, o pali e ni:
+		[sentence.]
+		[sentence.]
+	o pini!
+	
 
 
 example:
@@ -181,13 +189,19 @@ example:
 
 ## loops
 	
-while true do:
+repeat [n] times: 
+
+	tenpo [n] la o pali e ni:
+		[sentence.]
+		[sentence.]
+	o pini!
+
+'infinite' loop:
 
 	tenpo ali la o pali e ni:
-
-repeat x times: 
-
-	tenpo x la o pali e ni:
+		[sentence.]
+		[sentence.]
+	o pini!
 
 example:
 
@@ -197,7 +211,7 @@ example:
 	o pini!
 
 n.b.:  
-the 'tenpo ali' loop will not loop forever, since the highest number we can express is 100.
+the 'infinite' loop will not loop forever, since the highest number we can express is 100.
 however, you can easily get longer loops by nesting them.
 
 ## comments
@@ -213,7 +227,7 @@ multiple lines:
 	o pini!
 
 ## examples 
-toki.tp
+toki.tp (hello world)
 
 	ma o toki.tp
 		"ma o, toki!" li seme?
