@@ -2,5 +2,5 @@
 	"file_regex": "^(?:(?:\t)|(?:.+: ))(.+):([0-9]+): (.*)$",
 	"selector": "source.tps",
 	"shell": true,
-	"cmd": ["YOUR_PATH_TO_LUA.exe", "${project_path}\\src\\tokisona.lua","${file}"],
+	"cmd": ["lua", "${project_path}\\src\\tokisona.lua","${file}"],
 }
