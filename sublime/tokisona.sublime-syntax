@@ -1,0 +1,86 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions:
+  - tps
+scope: source.tps
+contexts:
+  main:
+    # Strings begin and end with quotes
+    - match: '"'
+      scope: punctuation.definition.string.begin.tps
+      push: double_quoted_string
+
+    # Multi-line comments
+    - match: 'mi pilin e ni:[\s]*$'
+      scope: punctuation.definition.comment.tps
+      push: multi_comment
+
+    # Single line comments
+    - match: 'mi pilin e ni:'
+      scope: punctuation.definition.comment.tps
+      push: line_comment
+
+    #invalid letters / syllables
+    - match: '(?i)\b\S*(b|c|d|f|g|h|q|r|v|z|ji|wu|wo|ti|(m|n)(m|n)|(a|e|i|o|u)(a|e|i|o|u)|(p|t|k|s|w|l|j|m)(p|t|k|s|w|l|j|m))\S*\b'
+      scope: invalid.illegal
+
+    #invalid symbols
+    - match: '@|#|\$|%|\^|&|\*|\-|\+|_|/|=|\\|\[|\]|{|}|\||>|<'
+      scope: invalid.illegal
+    
+    #operators
+    - match: '(li suli e|li lili e|li suli|li lili|li sama e|li sama ala e)' 
+      scope: keyword.operator
+
+    # Punctuation
+    - match: '(\.|!|:|\?|,)' 
+      scope: keyword.operator
+
+    # Keywords
+    - match: '\b(tenpo|ante la|la o pali|li|ni|seme|lon ala lon|la|e ni|li ni|o pini|o weka|o pali)\b'
+      scope: keyword.control.tps
+
+    # Names
+    - match: \b[A-Z][A-Za-z]*\b
+      scope: entity.name.type
+
+    # invalid capitals
+    - match: 'A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z'
+      scope: invalid.illegal
+
+    # Numbers
+    - match: '\b(ala|wan|tu|luka|mute|ali|ale)\b'
+      scope: constant.language.tps
+    #- match: '\b[1-9][0-9]*\b'
+    #  scope: constant.numeric.tps
+
+    # Boolean
+    - match: '\b(lon|lon ala)\b'
+      scope: constant.language.tps
+
+    # Types
+    - match: '\b(nimi|sona|nanpa)\b'
+      scope: storage.type.tps
+
+    # All other words
+    - match: '\b(a|akesi|ala|alasa|ale|anpa|ante|anu|awen|e|en|esun|ijo|ike|ilo|insa|jaki|jan|jelo|jo|kala|kalama|kama|kasi|ken|kepeken|kili|kiwen|ko|kon|kule|kulupu|kute|la|lape|laso|lawa|len|lete|li|lili|linja|lipu|loje|lon|luka|lukin|lupa|ma|mama|mani|meli|mi|mije|moku|moli|monsi|mu|mun|musi|mute|nanpa|nasa|nasin|nena|ni|nimi|noka|o|olin|ona|open|pakala|pali|palisa|pan|pana|pi|pilin|pimeja|pini|pipi|poka|poki|pona|pu|sama|seli|selo|seme|sewi|sijelo|sike|sin|sina|sinpin|sitelen|sona|soweli|suli|suno|supa|suwi|tan|taso|tawa|telo|tenpo|toki|tomo|tu|unpa|uta|utala|walo|wan|waso|wawa|weka|wile)\b'
+      scope: markup.italic
+
+  double_quoted_string:
+    - meta_scope: string.quoted.double.tps
+    - match: '"'
+      scope: punctuation.definition.string.end.tps
+      pop: true
+
+  multi_comment:
+    - meta_scope: comment.block
+    - match: 'o pini(!|\.)'
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line.tps
+    - match: '$'
+      pop: true
+
+

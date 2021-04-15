@@ -1,0 +1,67 @@
+% BNF of the grammar
+% mostly a sketch
+% capitalised words are terminals
+% words in double "" are terminals
+
+block := (chunk)+
+
+chunk := function | comment | assignment | question | loop | conditional | "o weka!"
+
+% special functions
+% currently none
+function := 
+
+comment := "mi pilin e ni:" Text 
+         | "mi pilin e ni:\n" {Text} "o pini!" 
+
+
+assignment := var "li" exp Period 
+            | var "li ni:" sentence Period
+
+exp := number | bool | str
+
+var := numbervar | boolvar | stringvar
+
+numbervar := "nanpa" Name
+boolvar := "sona" Name
+stringvar := "nimi" Name
+
+bool := "lon" | "lon ala" | boolvar | boolvar "ala"
+
+str := Word | StringLit | stringvar
+
+% extended numbers
+number := numberLiteral | numbervar
+numberLiteral := "ala" | "ali" | ("mute" | "luka" | "tu" | "wan")+
+
+StringLit (".")? | binop Period | relop Period
+
+question := number "li seme?" | str "li seme?" | bool "li lon ala lon?"
+
+conditional := (relop|bool) "la o pali e ni:" block ("ante la:" block)? "o pini."
+
+loop := "tenpo" number "la o pali e ni:" block "o pini."
+
+      ??
+      while loops:
+      "tenpo" bool "la o pali e ni:" chunk 
+      "tenpo" bool "li lon la o pali e ni:" chunk 
+      => dont need this, just do an infinite loop and break it with "o weka." 
+
+% binary operators
+binop := number "li suli e" number 
+       | number "li lili e" number
+       | str "li suli e" str
+
+% binary operators that evaluate to bool
+relop := number "la" number "li suli"
+       | number "la" number "li lili" 
+       | bool "la" bool 
+       | exp "li sama e" exp 
+       | exp "li sama ala e" exp
+
+
+Word := any word from the official dictionary
+StringLiteral := a series of alphanumeric characters in double quotes ""
+Text := a line of text
+Period := the character `.` or `!`

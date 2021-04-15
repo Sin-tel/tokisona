@@ -1,0 +1,5 @@
+- better syntax errors?
+	at least report line where error occurred
+- undefined type (ijo) ?
+- undefined values (ali - ali)
+- check ale and ali synonyms

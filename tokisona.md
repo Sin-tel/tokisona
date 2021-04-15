@@ -1,0 +1,235 @@
+TOKI SONA
+programming language for Toki Pona 
+
+
+programs are written in (mostly) correct toki pona sentences.
+ * lowercase words should be from the word list
+ * capitalised words can be any name that is phonologically correct
+ * the only place where you are allowed to break these rules is in comments
+sentences end with `.` or `!`. (stylistically, prefer to use `!` after imperatives or interjections.)
+questions (ie that return some output) end with `?`.
+some special sentences end with `:`
+commas are ignored
+whitespace (tabs etc) is ignored.
+`ale` and `ali` are synonymous.
+newlines: only allowed (but not required) after a sentence.
+
+* variables:
+	named variables start with capital letter, and a word preceding it to indicate the type.
+
+	all variables are global. they dont need to be declared before using them.
+
+	number type: `nanpa`
+		the numbers are:
+		0    | ala
+		1    | wan 
+		2    | tu 
+		3    | wan tu
+		4    | tu tu
+		5    | luka
+		20   | mute
+		100+ | ali
+
+		by putting them next to eachother you add them
+		e.g.:
+		78   | mute mute mute luka luka luka tu wan
+
+		numbers higher than 100 are not allowed. (ali really means infinite)
+		negative numbers will just produce zero.
+
+	boolean type: `sona` ("fact")
+		true  | lon
+		false | lon ala
+
+	string type: `nimi` ("words")
+		can hold any valid tp word or combination of words seperated by spaces
+		a single word is a valid string. multiple words should be wrapped in "".
+
+* large numbers (optional)
+	enable large number mode:
+	| mi wile e nanpa suli.
+
+* assignment
+
+	Po = 1
+	| nanpa Po li wan.
+
+	Ta = "hello"
+	| nimi Ta li toki.
+
+	So = true
+	| sona So li lon.
+
+	x = evaluate(sentence)
+	| x li ni: [sentence]
+
+	to denote strings longer than a single word, we need quotation marks.
+	| nimi Pe li "[sentence]".
+	or
+	| nimi Pe li ni: "[sentence]"
+
+* typecasting
+	changing the type of a variable automatically typecasts it.
+	number to string: obvious, its just the word
+	string to number: works if it is a number, otherwise it will produce `ala`
+
+	number to boolean: `ala` = `lon ala`, every other number = `lon`
+	boolean to number: `lon ala` = `ala`, `lon` = `wan`
+
+	boolean to string: obvious
+	string to boolean: strings containing an even amount of "ala" will produce "lon"
+		strings containing an odd amount will produce "lon ala".
+		"toki" => `lon`
+		"akesi ala" => `lon ala`
+		"lon ala ala" => `lon`
+
+	
+* questions
+
+	print(x) | nanpa x li seme?
+			 | nimi x li seme?
+			 | sona x li lon ala lon?
+
+	e.g.:
+	| nanpa Po li seme?
+	> wan
+
+* strings
+	a single word is just that. 
+	formultiple words, wrap them in ""
+	| nimi A li toki.
+	| nimi Pe li toki.
+
+
+* addition/subtraction
+	add
+	| nanpa x li suli e nanpa y.
+	subtract
+	| nanpa x li lili e nanpa y.
+
+	e.g.:
+	nanpa Po li ni: tu wan li suli e tu.
+	nanpa Po li seme?
+	> luka
+
+	adding strings concatenates them, with a space
+	| nimi Toki li toki.
+	| nimi Pona li pona.
+	| nimi Toki li suli e nimi Pona. 
+	evaluates to "toki pona"
+
+
+
+* logic
+	so far, there is no and / or
+	
+	not x
+	| x ala
+
+* relational operators
+	only for nanpa:
+		larger than
+		| nanpa A la nanpa Pe li suli.
+		less than
+		| nanpa A la nanpa Pe li lili.
+		
+		! note that these are reversed
+		nanpa A la nanpa Pe li suli.
+		"considering number A, number B is larger"
+		=> B > A
+
+	for all types:
+		equal
+		| nimi A li sama e nimi Pe.
+		not equal
+		| nimi A li sama ala e nimi Pe.
+	these all evaultuate to a boolean (sona)
+
+	nb: 
+	| ali li sama e ale.
+	lon.
+
+
+* flow
+	
+	for a single statement:
+	| [control] e ni: [sentence.]
+
+	multiple sentences:
+	| [control] e ni:
+	| 	[sentence.]
+	| 	[sentence.]
+	| o pini!
+
+	break | o weka!
+
+* if
+	
+	if x then | x la o pali e ni:
+
+	if statements close with "pini."
+
+	else | ante la:
+
+	| mute la o pali e ni:
+	| 	nanpa A li seme?
+	| 	nanpa A li ni: nanpa A li suli e wan.
+	| ante la, o pali e ni:
+	|   ante li seme?
+	| o pini!
+
+* loops
+	
+	while true do:  | tenpo ali la o pali e ni: 
+	repeat x times: | tenpo x la o pali e ni:
+
+	n.b.: 
+	the 'tenpo ali' loop will not loop forever. 
+	it stops when the computer gets tired, which is after around 100 iterations or so.
+	however, you can easily get longer loops by nesting them.
+
+* comments
+	you can add a comment like this:
+	| mi pilin e ni: [comment]
+
+	multiple lines:
+	| mi pilin e ni: 
+	|    [comment1]
+	|    [comment2]
+	| o pini!
+
+
+* errors (dont work yet)
+	if a sentence is deemed grammatical, but the parser doesn't get it:
+	> mi sona ala e ni: [sentence that it failed on]
+	if theres a mistake in the grammar or phonology:
+	> ni li ike: [sentence]
+
+
+* lists / dictionaries?
+	lipu/poki
+
+	ijo pi [index] lon lipu [Name]
+	Se[1] = 2 | ijo pi nanpa wan lon lipu Se li tu.
+
+* functions?
+	probably not lol
+
+* examples 
+	hello world:
+
+	ma o toki.tp
+		"ma o, toki!" li seme?
+
+	calculate fibonacci numbers:
+
+	nanpa pi jan Piponasi.tp
+		nanpa A li ala.
+		nanpa Pe li wan.
+		nanpa Se li ala.
+		tenpo ali la o pali e ni:
+			nanpa A li seme?
+			nanpa Se li ni: nanpa A li suli e nanpa Pe.
+			nanpa A li nanpa Pe.
+			nanpe Pe li nanpa Se.
+		pini!
