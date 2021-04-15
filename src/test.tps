@@ -1,19 +1,11 @@
-mi pilin e ni:    
-	this program calculates the fibonacci numbers
-o pini!
+mi pilin e ni: typecasting li nasa
 
-"nanpa pi jan Piponasi:" li seme?
+nimi A li "akesi ala".
+nimi Pe li "akesi suwi".
+nimi Se li "akesi tu".
+nimi Te li "akesi mute".
 
-nanpa A li ala.
-nanpa Pe li wan.
-nanpa Se li ala.
-
-tenpo mute la o pali e ni:
-	nanpa A li seme?
-	nanpa Se li ni: nanpa A li suli e nanpa Pe.
-	nanpa A li nanpa Pe.
-	nanpa Pe li nanpa Se.
-o pini!
-
-
-
+nanpa A li seme?   mi pilin e ni: ala
+nanpa Pe li seme?  mi pilin e ni: wan
+nanpa Se li seme?  mi pilin e ni: tu
+nanpa Te li seme?  mi pilin e ni: mute

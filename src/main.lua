@@ -13,9 +13,9 @@ filestring = readfile("test.tps")
 
 tokens = lex(filestring)
 
--- for i,v in ipairs(tokens) do
--- 	print(i,v)
--- end
+for i,v in ipairs(tokens) do
+	print(i,v)
+end
 
 syntaxTree = parse(tokens)
 

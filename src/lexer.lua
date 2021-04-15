@@ -26,6 +26,9 @@ function lex(str)
 	quote = false
 	newline = false
 
+	-- add a newline so the last line doesnt fail
+	str = str .. "\n"
+
 	for char in str:gmatch('.') do
 		if quote then
 			token = token .. char
@@ -71,6 +74,8 @@ function lex(str)
 			end
 		end
 	end
+	
+
 	return list
 end
 

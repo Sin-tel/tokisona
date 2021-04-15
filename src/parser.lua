@@ -152,7 +152,6 @@ end
 local function CommentWord()
 	local n = tokens[index]
 
-	-- check first letter capital
 	if n ~= "\n" then
 		table.insert(node,n)
 		index = index + 1
