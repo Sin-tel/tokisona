@@ -27,14 +27,14 @@ numbervar ::= "nanpa" Name
 boolvar ::= "sona" Name
 stringvar ::= "nimi" Name
 
-bool ::= "lon" | "lon ala" | boolvar | boolvar "ala"
+bool ::= "lon" | boolvar | bool "ala"
 
-str ::= Word | StringLit | stringvar
+str ::= Word | StringLiteral | stringvar
 
 number ::= numberLiteral | numbervar
 numberLiteral ::= "ala" | "ali" | ("mute" | "luka" | "tu" | "wan")+
 
-sentence ::= StringLit (Period)? | binop Period | relop Period
+sentence ::= StringLiteral (Period)? | binop Period | relop Period
 
 question ::= number "li seme?" | str "li seme?" | bool "li lon ala lon?"
 
@@ -55,6 +55,6 @@ relop ::= number "la" number "li suli"
 
 
 Word ::= any word from the official dictionary (see wordlist.lua)
-StringLiteral ::= a series of alphanumeric characters in Backus–Naur form ""
+StringLiteral ::= a series of alphanumeric characters enclosed in double quotes ""
 Text ::= a line of text
-Period ::= the character `.` or `!`
+Period ::= the character '.' or '!'
