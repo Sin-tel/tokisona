@@ -1,5 +1,5 @@
 # tokisona
-_tokisona li toki pi ilo sona._
+_ilo Tokisona li toki pi ilo sona._
 
 tokisona is a programming language for/in toki pona. programs are written in (mostly) correct toki pona sentences. `.tps` is used as the file extension for tokisona programs. (subject to change, since github thinks this is PLSQL)
 
